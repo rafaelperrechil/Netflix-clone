@@ -4,7 +4,8 @@ import Tmdb from './Tmdb';
 export default () =>{
 
     useEffect(()=>{ 
-      const teste = 'rafael'
+      const teste = 'rafael2'
+      const teste2 = 'rafael2'
         const loadAll = async () => {
           let list = await Tmdb.getHomeList();
           console.log(list);
