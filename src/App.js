@@ -3,7 +3,8 @@ import Tmdb from './Tmdb';
 
 export default () =>{
 
-    useEffect(()=>{
+    useEffect(()=>{ 
+      const teste = 'rafael'
         const loadAll = async () => {
           let list = await Tmdb.getHomeList();
           console.log(list);
