@@ -9,6 +9,7 @@ const App = () =>{
 
   const [movieList, setMivieList] = useState([]);
   const [featureData, setFeatureData] = useState(null);
+  const [blackHeader, setBlackHeader] = useState(true);
   
     useEffect(()=>{
         const loadAll = async () => {
@@ -20,16 +21,32 @@ const App = () =>{
           let chosen = originals[0].items.results[randomChosen];
           let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv');
           setFeatureData(chosenInfo);
-          console.log(chosenInfo);
         }
-    
         loadAll();
+      }, []);
+
+      useEffect(()=>{
+        const scrollListener = () => {
+          if(window.scrollY > 10){
+            setBlackHeader(true);
+          }else{
+            setBlackHeader(false);
+          }
+          console.log(blackHeader);
+        }
+
+        window.addEventListener('scroll', scrollListener);
+
+        return () => {
+          window.removeEventListener('scroll', scrollListener);
+        }
+
       }, []);
 
     return(
         <div className="home">
         
-        <Header />
+        <Header black={blackHeader}/>
 
         {featureData &&
           <FeatureMovie item={featureData}/>
@@ -40,6 +57,13 @@ const App = () =>{
               <MovieRow key={key} title={item.title} items={item.items}/>
             ))}
           </section>
+
+          {movieList.length <= 0 &&
+          <div className="loading">
+            <img src={process.env.PUBLIC_URL + '/loading.gif'} />
+          </div>
+          } 
+          
         </div>
     );
 }

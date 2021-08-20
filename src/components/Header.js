@@ -1,10 +1,10 @@
 import React from 'react';
 import './Header.css';
 
-const Header = () =>{
+const Header = ({black}) =>{
 
     return(
-        <header>
+        <header className={black ? 'black' : ''}>
             <div className="logo">
                 <a href="#">
                     <img src={process.env.PUBLIC_URL + '/logo.png'} />
