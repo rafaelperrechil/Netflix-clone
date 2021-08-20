@@ -3,6 +3,7 @@ import './App.css';
 import Tmdb from './Tmdb';
 import MovieRow from './components/MovieRow';
 import FeatureMovie from './components/FeatureMovie';
+import Header from './components/Header';
 
 const App = () =>{
 
@@ -19,6 +20,7 @@ const App = () =>{
           let chosen = originals[0].items.results[randomChosen];
           let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv');
           setFeatureData(chosenInfo);
+          console.log(chosenInfo);
         }
     
         loadAll();
@@ -26,6 +28,8 @@ const App = () =>{
 
     return(
         <div className="home">
+        
+        <Header />
 
         {featureData &&
           <FeatureMovie item={featureData}/>
