@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Tmdb from './Tmdb';
-import MovieRow from './components/MovieRow';
-import FeatureMovie from './components/FeatureMovie';
-import Header from './components/Header';
+import MovieRow from './components/MovieRow/';
+import FeatureMovie from './components/FeatureMovie/';
+import Header from './components/Header/';
+import Footer from './components/Footer/';
 
 const App = () =>{
 
@@ -21,6 +22,8 @@ const App = () =>{
           let chosen = originals[0].items.results[randomChosen];
           let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv');
           setFeatureData(chosenInfo);
+
+          console.log(list);
         }
         loadAll();
       }, []);
@@ -64,8 +67,9 @@ const App = () =>{
           </div>
           } 
           
+          <Footer />
         </div>
     );
 }
 
-export default App;
+export default App; 

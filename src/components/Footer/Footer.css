@@ -1,0 +1,29 @@
+footer{
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+footer > div ul{
+    padding: 0;
+    margin: 0 44px;
+}
+
+footer > div ul li{
+    list-style: none;
+    font-size: 13px;
+    margin: 14px 0;
+    
+}
+
+footer > div ul li a{
+    color: #6b6b6b;
+    list-style: none;
+    text-decoration: none;
+}
+
+footer > div ul li a:hover{
+    color:red;
+}
