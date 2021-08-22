@@ -84,15 +84,28 @@
 }
 
 @media (max-width:760px){
+
 	.featured {
 		height: 90vh;
 		background-position: center;
 	}
+
 	.featured .name {
-		font-size: 40px;
+		font-size: 30px;
 	}
+
 	.featured .description {
-		font-size: 14px;
+		font-size: 12px;
+		line-height: 16px;
 		width: 87%;
 	}
+
+	.featured .horizontal{
+		padding-left: 17px;
+	}
+
+	.featured .buttons a{
+		padding: 8px 17px; font-size: 11px;
+	}
+	
 }

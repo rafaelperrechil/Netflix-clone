@@ -28,3 +28,8 @@ section.lists {
 	z-index: 99;
 	align-items: center
 }
+
+@media (max-width:760px){
+	.loading{}
+	.loading img{max-width: 80px;}
+}

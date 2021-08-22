@@ -23,7 +23,7 @@ const App = () =>{
           let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv');
           setFeatureData(chosenInfo);
 
-          console.log(list);
+          //console.log(list);
         }
         loadAll();
       }, []);
